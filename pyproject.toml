@@ -1,0 +1,35 @@
+[tool.poetry]
+authors = []
+description = "ai ninjas"
+package-mode = false
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pydantic = "^2.11.5"
+
+
+[tool.poetry.group.dev.dependencies]
+pyright = "^1.1.401"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+package-mode = false
+
+[tool.pyright]
+exclude = [
+    ".venv/**/*",
+    "**/*_test.py"
+]
+venv = ".venv"
+venvPath = "."
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.flake8]
+max-line-length = 88
+exclude = ["venv", "__pycache__"]
